@@ -1,0 +1,25 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+.navigationBar{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.navItem{
+  display: flex;
+  gap: 80px;
+}
+
+
+.btnOpenDiscord{
+  
+}
+.navigationBarLogo{
+  height: 50px;
+  width: 50px;
+  border: 1px solid black;
+  border-radius: 50%;
+  border-color:darkcyan ;
+}
