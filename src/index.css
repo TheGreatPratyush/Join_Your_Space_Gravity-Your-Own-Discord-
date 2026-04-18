@@ -6,20 +6,86 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 10px 40px;
 }
 .navItem{
   display: flex;
-  gap: 80px;
+  gap: 40px;
+}
+.navigationHeadings{
+  position: relative;
+  cursor: pointer;
+
+  padding: 6px 12px;
 }
 
-
-.btnOpenDiscord{
-  
-}
 .navigationBarLogo{
   height: 50px;
   width: 50px;
   border: 1px solid black;
   border-radius: 50%;
   border-color:darkcyan ;
+}
+
+.questHover{
+  height: auto;
+  width: auto;
+  position: absolute;
+  top: 120%;
+  left: 50%;
+  background:#5865F2 ;
+  padding: 15px 20px;
+  border-radius: 10px;
+  z-index: 100;
+  min-width: max-content;
+  border: 1px solid black;
+  color: white;
+}
+
+.questHover ul{
+  list-style: none;
+  display: flex;
+  flex-direction: column; 
+  gap: 8px;
+}
+.questHover table {
+  border-collapse: collapse; }
+
+.questHover th,
+.questHover td {
+  padding: 6px 12px; 
+  text-align: left;
+}
+
+
+.navigationHeadings:hover{
+  border: 1px solid black;
+  border-radius: 20px;
+  background-color: #5865F2;
+
+}
+.questHover li:first-child {
+  font-weight: bold;
+  color: #FFFFFF;
+opacity: 0.9; 
+font-weight: 600;
+}
+.btnOpenDiscord button {
+  background-color: white;         
+  color: black;
+
+  padding: 8px 16px;               
+  border-radius: 20px;             
+  border: none;                     
+
+  font-size: 14px;
+  font-weight: 500;
+
+  cursor: pointer;
+  border: 1px solid black;
+  border-radius: 20px;
+}
+.btnOpenDiscord  :hover{
+  background-color: aqua;
+  
 }
