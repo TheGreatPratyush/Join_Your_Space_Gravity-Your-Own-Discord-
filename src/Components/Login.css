@@ -1,0 +1,73 @@
+.formOuterDiv {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; 
+    background-color: #f5f6fa;
+}
+
+.formOuterDiv > div {
+    background: white;
+   padding: 40px 50px;
+    border-radius: 10px;
+    width: 380px;
+    min-height: 350px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.welcomeHeading {
+    text-align: center;
+    font-weight: bold; 
+    margin-bottom: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.formOuterDiv label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 15px;
+    font-style: oblique;
+}
+
+.formOuterDiv input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    outline: none;
+}
+
+.formOuterDiv input:focus {
+    border-color: #5865f2; 
+}
+
+.loginBtn {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 50px;
+    background-color: #5865f2;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.loginBtn:hover {
+    background-color: #4752c4;
+}
+
+.formOuterDiv h5 {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 13px;
+}
+
+.formOuterDiv h5 button {
+    margin-left: 5px;
+    border: none;
+    background: none;
+    color: #5865f2;
+    cursor: pointer;
+}
