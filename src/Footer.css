@@ -13,6 +13,7 @@
     src: url("./Fonts/Yourbold-Demo.otf") format("truetype");
 }
 
+/* MAIN CONTAINER */
 .mainFooter {
     display: grid;
     gap: 10px;
@@ -26,31 +27,31 @@
     grid-template-rows: 1fr 9fr 7fr;
 }
 
-.topDiv{
+/* TOP */
+.mainFooter .topDiv {
     grid-column: 1 / 4;
     display: flex;
     justify-content: space-between;
-    top: 10px;
-    left: 35px;
-    right: 35px;
     height: 40px;
 }
 
-.leftSide{
+.mainFooter .leftSide {
     grid-column: 1 / 2;
     grid-row: 2 / 3;
-
 }
 
-.rightSide{
+.mainFooter .rightSide {
     grid-column: 2 / 4;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: end;
+    font-family: "DesFont", sans-serif;
+    text-align: left;
 }
 
-.bottomDiv{
-    grid-column: 1 / 4;
-}
-
-.logoName{
+/* LOGO */
+.mainFooter .logoName {
     border-radius: 12px;
     height: 29px;
     width: 130px;
@@ -60,7 +61,8 @@
     padding-top: 3px;
 }
 
-.login {
+/* LOGIN BUTTON IN FOOTER */
+.mainFooter .login {
     font-family: "DesFont", sans-serif;
     border-radius: 13px;
     height: 32px;
@@ -73,76 +75,54 @@
     padding-bottom: 1px;
 }
 
-.midDiv{
+/* MID */
+.mainFooter .midDiv {
     height: 400px;
-    top: 10px;
-    left: 35px;
-    right: 35px;
 }
 
-.logo{
+.mainFooter .logo {
     color: white;
-    font-family: "logo", sans-serif;
+    font-family: "Logo", sans-serif;
     font-size: 60px;
     text-align: left;
 }
 
-select{
+/* 🔥 FIXED: SELECT ONLY INSIDE FOOTER */
+.mainFooter select {
     width: 280px;
     height: 45px;
     border-radius: 10px;
     background-color: rgba(59, 60, 134);
-    -webkit-backdrop-filter: blur(5px);
     backdrop-filter: blur(5px);
+    color: white;
+    border: none;
 }
 
-button{
+/* 🔥 FIXED: BUTTON ONLY INSIDE FOOTER */
+.mainFooter button {
     width: 25px;
     height: 25px;
     margin: 10px;
 }
 
-.btn6{
+/* OPTIONAL HIDDEN BUTTON */
+.mainFooter .btn6 {
     opacity: 0;
 }
 
-.bottomDiv{
-  font-family: "LogoFont", sans-serif;
-  font-size: 395px;
-  color: white;
-}
-
-.rightSide{
-    display: flex;
-    flex-direction: row;
-    gap: 10px;
-    justify-content: end;
-    font-family: "desFont", sans-serif;
-    text-align: left;
-}
-
-.footerProduct{
+/* BOTTOM BIG TEXT */
+.mainFooter .bottomDiv {
+    grid-column: 1 / 4;
+    font-family: "LogoFont", sans-serif;
+    font-size: 395px;
     color: white;
-    height: 100%;
-    width: 165px;
-    padding-top: 10px;
 }
 
-.footerCompany{
-    color: white;
-    height: 100%;
-    width: 165px;
-    padding-top: 10px;
-}
-
-.footerResources{
-    color: white;
-    height: 100%;
-    width: 165px;
-    padding-top: 10px;
-}
-
-.footerPolicies{
+/* FOOTER SECTIONS */
+.mainFooter .footerProduct,
+.mainFooter .footerCompany,
+.mainFooter .footerResources,
+.mainFooter .footerPolicies {
     color: white;
     height: 100%;
     width: 165px;
