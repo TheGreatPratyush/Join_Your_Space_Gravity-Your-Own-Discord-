@@ -6,6 +6,9 @@ import Login from './Components/Login.jsx'
 import Signup from './Components/Signup.jsx'
 import bg from "./Assets/mainBackground.png";
 import robot from "./Assets/robot.png"
+import ASCIIText from './Components/ASCIIText';
+
+
 const App = () => {
   const [login , setLogin ] =useState(true)
   function toggleAuthMode(){
@@ -23,21 +26,18 @@ const App = () => {
   }}
 >
       <Navigation/>
-<<<<<<< Updated upstream
-      {login ? <Login onRegisterClick={toggleAuthMode}/> : <Signup onLoginClick={toggleAuthMode}/>}
-  
-=======
+      <ASCIIText
+            text="GROUP CHAT"
+            enableWaves
+            asciiFontSize={3}
+          />
       <div className="flex items-center h-[80vh] px-16">
         <div className="max-w-xl text-white">
+          <br/>
+          <br/>
+          <br/>
+    
           
-          <h1 className="text-6xl font-extrabold leading-tight">
-            GROUP CHAT <br />
-            THAT'S ALL <br />
-            FUN & GAMES
-          </h1>
-          <br />
-          <br />
-          <br />
           <p className="mt-6 text-lg text-gray-200">
             Discord is great for playing games and chilling with friends,
             or even building a worldwide community. Customise your own
@@ -66,7 +66,6 @@ const App = () => {
       <Footer/>
       {/* {login ? <Login onRegisterClick={toggleAuthMode}/> : <Signup onLoginClick={toggleAuthMode}/>} */}
       
->>>>>>> Stashed changes
     </div>
   )
 }
