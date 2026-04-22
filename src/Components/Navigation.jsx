@@ -64,7 +64,7 @@ const onHoverSafety=()=>{
 
 
 
-const Navigation = () => {
+const Navigation = ({toggleAuthMode}) => {
   return ( 
     <div className='navigationBar'>
         <div className='navigationBarLogo'>
@@ -141,7 +141,9 @@ const Navigation = () => {
 
         
         <div className='btnOpenDiscord'>
-            <button>OpenDiscord</button>
+            <button onClick={()=>{
+                toggleAuthMode()
+            }}>OpenDiscord</button>
         </div>
         
     </div>

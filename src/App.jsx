@@ -10,9 +10,9 @@ import ASCIIText from './Components/ASCIIText';
 
 
 const App = () => {
-  const [login , setLogin ] =useState(true)
+  const [showLogin , setShowLogin ] =useState(false)
   function toggleAuthMode(){
-    setLogin(!login)
+    setShowLogin(!showLogin)
   }
   return (
     <div
@@ -20,12 +20,12 @@ const App = () => {
     backgroundImage: `url(${bg})`,
     backgroundPosition:"center",
     backgroundSize:"cover",
-    height:"100vh",
+    minHeight:"100vh",
 
 
   }}
 >
-      <Navigation/>
+      <Navigation toggleAuthMode={toggleAuthMode}/>
       <ASCIIText
             text="GROUP CHAT"
             enableWaves
@@ -38,7 +38,7 @@ const App = () => {
           <br/>
     
           
-          <p className="mt-6 text-lg text-gray-200">
+          <p className="mt-20 text-lg text-gray-200">
             Discord is great for playing games and chilling with friends,
             or even building a worldwide community. Customise your own
             space to talk, play, and hang out.
@@ -63,6 +63,7 @@ const App = () => {
           }}
         ></div>
       </div>
+      {showLogin ?  <Login /> : ""}
       <Footer/>
       {/* {login ? <Login onRegisterClick={toggleAuthMode}/> : <Signup onLoginClick={toggleAuthMode}/>} */}
       
