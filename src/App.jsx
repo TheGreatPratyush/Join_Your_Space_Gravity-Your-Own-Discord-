@@ -31,6 +31,9 @@ const App = () => {
             enableWaves
             asciiFontSize={3}
           />
+      <Navigation/>
+      {/* {login ? <Login onRegisterClick={toggleAuthMode}/> : <Signup onLoginClick={toggleAuthMode}/>} */}
+  
       <div className="flex items-center h-[80vh] px-16">
         <div className="max-w-xl text-white">
           <br/>
