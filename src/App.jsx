@@ -27,11 +27,11 @@ const App = () => {
 >
       <Navigation toggleAuthMode={toggleAuthMode}/>
       <ASCIIText
-            text="GROUP CHAT"
+            text="GRAVITY"
             enableWaves
             asciiFontSize={3}
           />
-      <Navigation/>
+
       {/* {login ? <Login onRegisterClick={toggleAuthMode}/> : <Signup onLoginClick={toggleAuthMode}/>} */}
   
       <div className="flex items-center h-[80vh] px-16">
