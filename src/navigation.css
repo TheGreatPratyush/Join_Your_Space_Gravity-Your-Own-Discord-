@@ -1,92 +1,51 @@
-*{
-  margin: 0;
-  padding: 0;
-}
-.navigationBar{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px 40px;
-  color: white;
-}
-.navItem{
-  display: flex;
-  gap: 40px;
-}
-.navigationHeadings{
+.navigationHeadings {
   position: relative;
   cursor: pointer;
-
-  padding: 6px 12px;
+  padding: 8px 12px;
+  font-weight: 600;
+  font-size: 15px;
+  transition: all 0.2s ease;
 }
 
-.navigationBarLogo{
-  height: 50px;
-  width: 50px;
-  border: 1px solid black;
-  border-radius: 50%;
-  border-color:darkcyan ;
+.navigationHeadings:hover {
+  text-decoration: underline;
 }
 
-.questHover{
+.questHover {
   height: auto;
   width: auto;
   position: absolute;
-  top: 120%;
+  top: 130%;
   left: 50%;
-  background:#5865F2 ;
+  transform: translateX(-50%);
+  background: white;
   padding: 15px 20px;
-  border-radius: 10px;
+  border-radius: 8px;
   z-index: 100;
   min-width: max-content;
-  border: 1px solid black;
-  color: white;
-}
-
-.questHover ul{
-  list-style: none;
-  display: flex;
-  flex-direction: column; 
-  gap: 8px;
-}
-.questHover table {
-  border-collapse: collapse; }
-
-.questHover th,
-.questHover td {
-  padding: 6px 12px; 
+  color: black;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
   text-align: left;
 }
 
-
-.navigationHeadings:hover{
-  border: 1px solid black;
-  border-radius: 20px;
-  background-color: #5865F2;
-
+.questHover ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column; 
+  gap: 12px;
 }
-.questHover li:first-child {
-  font-weight: bold;
-  color: #FFFFFF;
-opacity: 0.9; 
-font-weight: 600;
+
+.questHover table {
+  border-collapse: collapse;
 }
-.btnOpenDiscord button {
-  background-color: white;         
-  color: black;
 
-  padding: 8px 16px;               
-  border-radius: 20px;             
-  border: none;                     
+.questHover th,
+.questHover td {
+  padding: 8px 12px; 
+  text-align: left;
+}
 
-  font-size: 14px;
-  font-weight: 500;
-
+.questHover li:hover, .questHover td:hover {
+  text-decoration: underline;
   cursor: pointer;
-  border: 1px solid black;
-  border-radius: 20px;
-}
-.btnOpenDiscord  :hover{
-  background-color: aqua;
-  
 }
