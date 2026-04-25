@@ -1,0 +1,86 @@
+.sidebar {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  background-color: #f2f3f5;
+}
+
+.topSection {
+  padding: 56px 0;
+}
+
+.profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #ddd;
+}
+
+.avatar {
+  height: 52px;
+  width: 52px;
+  border-radius: 50%;
+  background-color: #fcd34d;
+  border: 1px solid black;
+}
+
+.userInfo {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.name {
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.email {
+  font-size: 13px;
+  color: gray;
+  margin-top: 2px;
+}
+
+.menu {
+  list-style: none;
+  padding: 12px 0;
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.menu li {
+  width: 80%;
+  text-align: center;
+  padding: 10px 0;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-bottom: 4px;
+  transition: 0.2s;
+}
+
+.menu li:hover {
+  background-color: #e3e5e8;
+}
+
+.bottomSection {
+  padding: 16px;
+}
+
+.createBtn {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background-color: #5865F2;
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.createBtn:hover {
+  background-color: #4752c4;
+}
