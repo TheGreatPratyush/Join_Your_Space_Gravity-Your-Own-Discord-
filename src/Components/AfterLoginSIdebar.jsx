@@ -68,12 +68,16 @@ const AfterLoginSIdebar = () => {
       <FriendsSidebar reciveData={reciveData} />
 
       
-      <div style={{flex:1, padding:"20px"}}>
-        <h2>Select a chat</h2>
-      </div>
+  
       
 
-      <div style={{flex:1, padding:"20px"}}>
+      <div style={{
+        flex: 1,
+        display: "flex",
+        flexDirection: "column",
+        height: "100vh",
+        backgroundColor: "#fffbea"
+      }}>
         <ChatboxArea selectedUser={childData} />
       </div>
     </div>
