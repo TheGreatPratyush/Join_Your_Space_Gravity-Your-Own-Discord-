@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import { div } from 'three/tsl'
 
 const chats = [
   { id: 1, name: "Carry Jenkinson", message: "If the rumors prove true Brooklyn...", time: "15:32", avatar: 12 },
@@ -15,75 +14,85 @@ const chats = [
   { id: 11, name: "Emma Watson", message: "I'll send the files soon.", time: "13:05", avatar: 22 },
 ]
 
-const FriendsSidebar = ({reciveData}) => {
-    const [input,setInput] = useState("")
-    const [chat,setChat] = useState(chats)
-    const [selectedUser, setSelectedUser] = useState(chats[0])
+const FriendsSidebar = ({ reciveData }) => {
+  const [input, setInput] = useState("")
+  const [chat, setChat] = useState(chats)
+  const [selectedUser, setSelectedUser] = useState(chats[0])
 
-const User = ({ profilePic, name, lastMessage, time ,onClick, isSelected}) => {
-  return (
-    <div style={{
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "space-between",
-      padding: "10px",
-      marginBottom: "5px",
-      borderBottom: "1px solid #eee",
-      backgroundColor: isSelected ? "#e3e5e8" : "transparent",
-      borderRadius: "8px",
+  const User = ({ profilePic, name, lastMessage, time, onClick, isSelected }) => {
+    return (
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-between",
+          padding: "10px",
+          marginBottom: "5px",
+          borderBottom: "1px solid #eee",
+          backgroundColor: isSelected ? "#e3e5e8" : "transparent",
+          borderRadius: "8px",
+          cursor: "pointer"
+        }}
+        onClick={onClick}
+      >
+        <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+          <img
+            src={profilePic}
+            alt=""
+            style={{ width: "40px", height: "40px", borderRadius: "50%" }}
+          />
 
-    }} onClick = {onClick} >
-      
-      <div style={{display: "flex", alignItems: "center", gap: "10px"}}>
-        <img 
-          src={profilePic} 
-          alt="" 
-          style={{width: "40px", height: "40px", borderRadius: "50%"}}
-        />
-
-        <div>
-          <div style={{fontWeight: "bold"}}>{name}</div>
-          <div style={{fontSize: "12px", color: "gray"}}>
-            {lastMessage}
+          <div>
+            <div style={{ fontWeight: "bold" }}>{name}</div>
+            <div style={{ fontSize: "12px", color: "gray" }}>
+              {lastMessage}
+            </div>
           </div>
         </div>
-      </div>
 
-      <div style={{fontSize: "12px", color: "gray"}}>
-        {time}
+        <div style={{ fontSize: "12px", color: "gray" }}>
+          {time}
+        </div>
       </div>
+    )
+  }
 
-    </div>
-  )
-}
-function handleInput(e){
+  function handleInput(e) {
     let value = e.target.value
     setInput(value)
-    let newUpdated = chats.filter( (h)=>{return h.name.toLowerCase().includes(value.toLowerCase())})
+    let newUpdated = chats.filter((h) =>
+      h.name.toLowerCase().includes(value.toLowerCase())
+    )
     setChat(newUpdated)
-}
-  return (
-    <div style={{
-      width: "320px",
-      borderRight: "1px solid #ddd",
-      height: "100vh",
-      padding: "15px",
-      boxSizing: "border-box"
-    }}>
+  }
 
+  return (
+    <div
+      style={{
+        width: "320px",
+        borderRight: "1px solid #ddd",
+        height: "100vh",
+        padding: "15px",
+        boxSizing: "border-box",
+
+       
+        display: "flex",
+        flexDirection: "column"
+      }}
+    >
+      
       <div>
-        <h2 style={{margin: 0}}>Friends</h2>
-        <p style={{margin: 0, fontSize: "12px", color: "gray"}}>
+        <h2 style={{ margin: 0 }}>Friends</h2>
+        <p style={{ margin: 0, fontSize: "12px", color: "gray" }}>
           245 conversations
         </p>
       </div>
 
-      <input 
+     
+      <input
         placeholder="Search"
         value={input}
-        onChange={(e)=>{
-            handleInput(e)
-        }}
+        onChange={handleInput}
         style={{
           width: "100%",
           padding: "10px",
@@ -93,16 +102,32 @@ function handleInput(e){
         }}
       />
 
-  
-      <div style={{marginTop: "20px"}}>
-        {chat.map((e)=>{
-            return <User profilePic={`https://i.pravatar.cc/40?img=${e.avatar}`} name={e.name} lastMessage={e.message} time={e.time} onClick={() => {
+      
+      <div
+        style={{
+          marginTop: "20px",
+
+          flex: 1,
+          overflowY: "auto"
+        }}
+      >
+        {chat.map((e) => {
+          return (
+            <User
+              key={e.id}
+              profilePic={`https://i.pravatar.cc/40?img=${e.avatar}`}
+              name={e.name}
+              lastMessage={e.message}
+              time={e.time}
+              onClick={() => {
                 setSelectedUser(e)
-                reciveData(e) 
-                console.log(e)}}  isSelected={selectedUser.id==e.id}  />
+                reciveData(e)
+              }}
+              isSelected={selectedUser.id === e.id}
+            />
+          )
         })}
       </div>
-
     </div>
   )
 }
