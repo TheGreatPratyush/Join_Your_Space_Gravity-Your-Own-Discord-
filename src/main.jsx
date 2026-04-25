@@ -10,8 +10,8 @@ import Login from './Components/Login.jsx'
 import LastPage from './Components/LastPage.jsx'
 import AfterLoginSIdebar from './Components/AfterLoginSIdebar.jsx'
 createRoot(document.getElementById('root')).render(
-    <AfterLoginSIdebar/>
-    // <App/>
+    <App/>
+    
     // <LastPage/>
     // <Login/>
 )
