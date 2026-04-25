@@ -1,24 +1,16 @@
-import React from 'react'
+import React, { useState } from 'react'
 
-const ChatboxArea = ({ selectedUser}) => {
+const ChatboxArea = ({ selectedUser, messages, sendMessage }) => {
 
- 
-  const chatHistory = {
-    1: [
-      { from: "them", text: "If the rumors prove true Brooklyn..." },
-      { from: "me", text: "Yeah I heard that too" }
-    ],
-    2: [
-      { from: "them", text: "So true. See ya there" },
-      { from: "me", text: "Sure 👍" }
-    ],
-    3: [
-      { from: "them", text: "Don't go to that concert..." }
-    ]
+  const [input, setInput] = useState("")
+
+  function handleSend(e) {
+    e.preventDefault()
+    if (!input.trim()) return
+
+    sendMessage(input)
+    setInput("")
   }
-
-  
-  const messages = chatHistory[selectedUser?.id] || []
 
   return (
     <div style={{
@@ -27,7 +19,7 @@ const ChatboxArea = ({ selectedUser}) => {
       height: "100%"
     }}>
 
-      
+      {/* HEADER */}
       <div style={{
         padding: "10px",
         borderBottom: "1px solid #ddd",
@@ -36,14 +28,16 @@ const ChatboxArea = ({ selectedUser}) => {
         {selectedUser?.name || "Select a chat"}
       </div>
 
-     
+      {/* MESSAGES */}
       <div style={{
         flex: 1,
         overflowY: "auto",
         backgroundColor: "#f5f5f5",
         padding: "10px"
       }}>
-        {messages.length === 0 ? (
+        {!selectedUser?.id ? (
+          <div>Select a user to start chatting</div>
+        ) : messages.length === 0 ? (
           <div>No messages</div>
         ) : (
           messages.map((msg, index) => (
@@ -69,22 +63,27 @@ const ChatboxArea = ({ selectedUser}) => {
         )}
       </div>
 
-
-      <div style={{
-        borderTop: "1px solid #ccc",
-        padding: "10px",
-        backgroundColor: "#fff"
-      }}>
+      {/* INPUT */}
+      <form
+        onSubmit={handleSend}
+        style={{
+          borderTop: "1px solid #ccc",
+          padding: "10px",
+          backgroundColor: "#fff"
+        }}
+      >
         <input
           type="text"
+          value={input}
+          onChange={(e) => setInput(e.target.value)}
+          placeholder="Type a message..."
           style={{
             width: "100%",
             padding: "10px",
             border: "1px solid black"
           }}
-          placeholder="Type a message..."
         />
-      </div>
+      </form>
 
     </div>
   )
