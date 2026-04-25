@@ -7,8 +7,10 @@ import './navigation.css'
 import './Components/Login.css'
 import './Components/Signup.css'
 import LastPage from './Components/LastPage.jsx'
+import AfterLoginSIdebar from './Components/AfterLoginSIdebar.jsx'
 createRoot(document.getElementById('root')).render(
-    <App/>
+    <AfterLoginSIdebar/>
+    // <App/>
     // <LastPage/>
     
 )

@@ -2,31 +2,37 @@ import React, { useState } from 'react'
 import { div } from 'three/tsl'
 
 const chats = [
-  { name: "Carry Jenkinson", message: "If the rumors prove true Brooklyn...", time: "15:32" },
-  { name: "Nick Parsons", message: "So true. See ya there", time: "12:46" },
-  { name: "Alexey Vishnevsky", message: "Don't try to go on that concert...", time: "10:45" },
-  { name: "Nicky Franceska", message: "Sometimes I want to be a rockstar...", time: "09:30" },
-  { name: "Kelly Minori", message: "Yeah, that's the idea.", time: "08:54" },
-  { name: "Bella Frederick", message: "Love the recipe that you gave me...", time: "07:47" },
-  { name: "Alan Dupree", message: "Seems good to me, let's do that.", time: "06:21" },
-  { name: "Erick Conell", message: "Sorry, not now...", time: "05:18" },
-  { name: "Sarah Lewiston", message: "Are you coming today?", time: "04:50" },
-  { name: "John Carter", message: "Meeting at 5?", time: "14:12" },
-  { name: "Emma Watson", message: "I'll send the files soon.", time: "13:05" },
+  { id: 1, name: "Carry Jenkinson", message: "If the rumors prove true Brooklyn...", time: "15:32", avatar: 12 },
+  { id: 2, name: "Nick Parsons", message: "So true. See ya there", time: "12:46", avatar: 13 },
+  { id: 3, name: "Alexey Vishnevsky", message: "Don't try to go on that concert...", time: "10:45", avatar: 14 },
+  { id: 4, name: "Nicky Franceska", message: "Sometimes I want to be a rockstar...", time: "09:30", avatar: 15 },
+  { id: 5, name: "Kelly Minori", message: "Yeah, that's the idea.", time: "08:54", avatar: 16 },
+  { id: 6, name: "Bella Frederick", message: "Love the recipe that you gave me...", time: "07:47", avatar: 17 },
+  { id: 7, name: "Alan Dupree", message: "Seems good to me, let's do that.", time: "06:21", avatar: 18 },
+  { id: 8, name: "Erick Conell", message: "Sorry, not now...", time: "05:18", avatar: 19 },
+  { id: 9, name: "Sarah Lewiston", message: "Are you coming today?", time: "04:50", avatar: 20 },
+  { id: 10, name: "John Carter", message: "Meeting at 5?", time: "14:12", avatar: 21 },
+  { id: 11, name: "Emma Watson", message: "I'll send the files soon.", time: "13:05", avatar: 22 },
 ]
 
 const FriendsSidebar = () => {
     const [input,setInput] = useState("")
     const [chat,setChat] = useState(chats)
-const User = ({ profilePic, name, lastMessage, time }) => {
+    const [selectedUser, setSelectedUser] = useState(chats[0])
+
+const User = ({ profilePic, name, lastMessage, time ,onClick, isSelected}) => {
   return (
     <div style={{
       display: "flex",
       alignItems: "center",
       justifyContent: "space-between",
-      padding: "10px 0",
-      borderBottom: "1px solid #eee"
-    }}>
+      padding: "10px",
+      marginBottom: "5px",
+      borderBottom: "1px solid #eee",
+      backgroundColor: isSelected ? "#e3e5e8" : "transparent",
+      borderRadius: "8px",
+
+    }} onClick = {onClick} >
       
       <div style={{display: "flex", alignItems: "center", gap: "10px"}}>
         <img 
@@ -89,8 +95,9 @@ function handleInput(e){
 
   
       <div style={{marginTop: "20px"}}>
-        {chat.map((e,index)=>{
-            return <User profilePic={`https://i.pravatar.cc/40?img=${index + 12}`} name={e.name} lastMessage={e.message} time={e.time}  />
+        {chat.map((e)=>{
+            return <User profilePic={`https://i.pravatar.cc/40?img=${e.avatar}`} name={e.name} lastMessage={e.message} time={e.time} onClick={() => {setSelectedUser(e) 
+                console.log(e)}}  isSelected={selectedUser.id==e.id}  />
         })}
       </div>
 
