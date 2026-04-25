@@ -15,7 +15,7 @@ const chats = [
   { id: 11, name: "Emma Watson", message: "I'll send the files soon.", time: "13:05", avatar: 22 },
 ]
 
-const FriendsSidebar = () => {
+const FriendsSidebar = ({reciveData}) => {
     const [input,setInput] = useState("")
     const [chat,setChat] = useState(chats)
     const [selectedUser, setSelectedUser] = useState(chats[0])
@@ -96,7 +96,9 @@ function handleInput(e){
   
       <div style={{marginTop: "20px"}}>
         {chat.map((e)=>{
-            return <User profilePic={`https://i.pravatar.cc/40?img=${e.avatar}`} name={e.name} lastMessage={e.message} time={e.time} onClick={() => {setSelectedUser(e) 
+            return <User profilePic={`https://i.pravatar.cc/40?img=${e.avatar}`} name={e.name} lastMessage={e.message} time={e.time} onClick={() => {
+                setSelectedUser(e)
+                reciveData(e) 
                 console.log(e)}}  isSelected={selectedUser.id==e.id}  />
         })}
       </div>

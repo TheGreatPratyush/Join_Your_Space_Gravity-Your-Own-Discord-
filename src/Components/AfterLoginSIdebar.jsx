@@ -1,10 +1,16 @@
 import React, { useState } from 'react'
 import './AfterLoginSidebar.css'
 import FriendsSidebar from "./Friends/FriendsSidebar"
+import ChatboxArea from './Friends/ChatboxArea'
 
 const AfterLoginSIdebar = () => {
   const [sideBarOptions,setSideBar] = useState(["Conversation","Friends","Work Collegues","Developer"])
   const [showform,setShowForm]=useState(false)
+  const [childData ,setChildData ] = useState({})
+  function reciveData(dataFromChild){
+    setChildData(dataFromChild)
+    console.log("DataRecived")
+  }
 
   function handleCreateBtn(){
     setShowForm(!showform)
@@ -59,13 +65,17 @@ const AfterLoginSIdebar = () => {
       </div>
 
       
-      <FriendsSidebar />
+      <FriendsSidebar reciveData={reciveData} />
 
       
       <div style={{flex:1, padding:"20px"}}>
         <h2>Select a chat</h2>
       </div>
+      
 
+      <div style={{flex:1, padding:"20px"}}>
+        <ChatboxArea selectedUser={childData} />
+      </div>
     </div>
   )
 }
