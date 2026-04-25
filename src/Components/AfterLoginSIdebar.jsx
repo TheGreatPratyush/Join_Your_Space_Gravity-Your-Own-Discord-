@@ -7,9 +7,10 @@ const AfterLoginSIdebar = () => {
   const [sideBarOptions,setSideBar] = useState(["Conversation","Friends","Work Collegues","Developer"])
   const [showform,setShowForm]=useState(false)
   const [childData ,setChildData ] = useState({})
+  const [darkMode, setDarkMode] = useState(false) // 👈 NEW
+
   function reciveData(dataFromChild){
     setChildData(dataFromChild)
-    console.log("DataRecived")
   }
 
   function handleCreateBtn(){
@@ -19,7 +20,6 @@ const AfterLoginSIdebar = () => {
   function handleInput(e){
     e.preventDefault()
     const value = e.target.elements[0].value
-    console.log(value)
     setSideBar([...sideBarOptions,value])
   }
 
@@ -33,9 +33,8 @@ const AfterLoginSIdebar = () => {
   }  
 
   return (
-    <div className="sidebar" style={{display:"flex", height:"100vh"}}>
+    <div className={`sidebar ${darkMode ? "dark" : "light"}`} style={{display:"flex", height:"100vh"}}>
       
-
       <div style={{width:"260px", borderRight:"1px solid #ddd"}}>
         <div className="topSection">
           <div className="profile">
@@ -61,22 +60,24 @@ const AfterLoginSIdebar = () => {
           <button className="createBtn" onClick={handleCreateBtn}>
             Create ⊕
           </button>
+
+          {/* 👇 TOGGLE BUTTON */}
+          <button
+            className="themeFloatingBtn"
+            onClick={() => setDarkMode(!darkMode)}
+          >
+            {darkMode ? "☀️" : "🌙"}
+          </button>
         </div>
       </div>
 
-      
       <FriendsSidebar reciveData={reciveData} />
-
-      
-  
-      
 
       <div style={{
         flex: 1,
         display: "flex",
         flexDirection: "column",
-        height: "100vh",
-        backgroundColor: "#fffbea"
+        height: "100vh"
       }}>
         <ChatboxArea selectedUser={childData} />
       </div>

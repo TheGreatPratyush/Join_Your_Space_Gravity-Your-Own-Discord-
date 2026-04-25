@@ -84,3 +84,45 @@
 .createBtn:hover {
   background-color: #4752c4;
 }
+
+.themeFloatingBtn {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+}
+
+.sidebar.light .themeFloatingBtn {
+  background-color: #222;
+  color: #fff;
+}
+
+.sidebar.dark .themeFloatingBtn {
+  background-color: #f1f1f1;
+  color: #000;
+}
+
+.themeFloatingBtn:hover {
+  transform: scale(1.1);
+}
+
+.sidebar.light {
+  background-color: #f2f3f5;
+  color: black;
+}
+
+.sidebar.dark {
+  background-color: #1e1e1e;
+  color: white;
+}

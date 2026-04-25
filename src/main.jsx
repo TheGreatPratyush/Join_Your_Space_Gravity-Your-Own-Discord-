@@ -9,8 +9,8 @@ import './Components/Signup.css'
 import LastPage from './Components/LastPage.jsx'
 import AfterLoginSIdebar from './Components/AfterLoginSIdebar.jsx'
 createRoot(document.getElementById('root')).render(
-    // <AfterLoginSIdebar/>
-    <App/>
+    <AfterLoginSIdebar/>
+    // <App/>
     // <LastPage/>
     
 )
