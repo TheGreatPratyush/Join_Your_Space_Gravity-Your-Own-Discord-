@@ -47,7 +47,7 @@ const App = () => {
 
       <div className="bg-[#23272A] w-full relative overflow-hidden flex flex-col items-center justify-center pt-32 pb-40 text-center min-h-[600px]">
         <div className="absolute inset-0 pointer-events-none opacity-50" style={{
-          backgroundImage: 'radial-gradient(circle, white 1px, transparent 1px)',
+          backgroundColor: "blue",
           backgroundSize: '100px 100px'
         }}></div>
 
