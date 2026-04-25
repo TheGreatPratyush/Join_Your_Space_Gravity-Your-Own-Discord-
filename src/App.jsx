@@ -19,8 +19,8 @@ const App = () => {
 
       <div className="bg-[#404EED] w-full relative overflow-hidden flex justify-center pt-24 pb-32 min-h-[650px]">
         <div className="absolute inset-0 max-w-[1440px] mx-auto pointer-events-none">
-          <div className="absolute bottom-0 left-[-5%] lg:left-[5%] w-[400px] h-[400px] bg-contain bg-no-repeat bg-bottom opacity-20 lg:opacity-60" style={{backgroundImage: `url(${bg})`}}></div>
-          <div className="absolute bottom-0 right-[-5%] lg:right-[5%] w-[400px] h-[400px] bg-contain bg-no-repeat bg-bottom opacity-20 lg:opacity-60" style={{backgroundImage: `url(${robot})`}}></div>
+          <div className="absolute bottom-0 left-[-5%] lg:left-[5%] w-[1000px] h-[1000px] bg-contain bg-no-repeat bg-bottom opacity-20 lg:opacity-60" style={{backgroundImage: `url(${bg})`}}></div>
+          <div className="absolute bottom-0 right-[-5%] lg:right-[0%] w-[200px] h-[200px] bg-contain bg-no-repeat bg-bottom opacity-20 lg:opacity-60" style={{backgroundImage: `url(${robot})`}}></div>
         </div>
 
         <div className="relative z-10 max-w-[800px] text-center px-6 flex flex-col items-center">
@@ -60,7 +60,7 @@ const App = () => {
         </button>
 
         <div className="absolute bottom-0 w-full flex justify-center items-end opacity-80 pointer-events-none">
-           <div className="w-[150px] h-[150px] bg-contain bg-no-repeat bg-bottom" style={{backgroundImage: `url(${robot})`}}></div>
+           <div className="w-[700px] h-[700px] bg-contain bg-no-repeat bg-bottom" style={{backgroundImage: `url(${robot})`}}></div>
         </div>
       </div>
 
